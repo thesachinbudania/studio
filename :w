@@ -1,16 +1,16 @@
-"use client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin } from "lucide-react";
 import InquiryForm from "@/components/InquiryForm";
-import { useHotelStore } from "@/lib/zustandStore";
 
 const ADDRESS = "vill chanjra Bir, teh, Joginder Nagar, Himachal Pradesh 175032";
 const EMAIL = "info@hotel.com";
 const PHONE = "+91 98172 60852";
 
 function MapCard() {
-  const { google_map_link: mapEmbedUrl } = useHotelStore();
-  console.log("Map Embed URL:", mapEmbedUrl);
+  // The Google Maps embed URL for "The Himalayan" hotel in Manali.
+  // You can replace this URL with one for any other location.
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.725390533304!2d77.17775307628216!3d32.23948891086884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39048708163fd899%3A0x8cbd34a6df58dc45!2sManali%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1721781647945!5m2!1sen!2sin";
+
   return (
     <Card className="overflow-hidden">
       <CardHeader>
@@ -39,8 +39,6 @@ function MapCard() {
 }
 
 export default function ContactPage() {
-  const { phone_number, address } = useHotelStore();
-
   return (
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16">
@@ -73,7 +71,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold">Address</h3>
                     <p className="text-muted-foreground">
-                      {address}
+                      {ADDRESS}
                     </p>
                   </div>
                 </div>
@@ -90,8 +88,8 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold">Phone</h3>
-                    <a href={`tel:${phone_number}`} className="text-muted-foreground hover:text-primary transition-colors">
-                      {phone_number}
+                    <a href="tel:+911234567890" className="text-muted-foreground hover:text-primary transition-colors">
+                      {PHONE}
                     </a>
                   </div>
                 </div>

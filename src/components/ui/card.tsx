@@ -2,6 +2,9 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+// --- Card Component styled with "Tranquil Luxury" theme ---
+// The main container for the card. It has a subtle border, a soft cream background,
+// and a shadow that becomes more prominent on hover for a premium interactive feel.
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -9,7 +12,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      "rounded-lg border border-gray-200/80 bg-[#F9F5EB] text-[#4B4B4B] shadow-sm transition-shadow hover:shadow-xl",
       className
     )}
     {...props}
@@ -17,6 +20,7 @@ const Card = React.forwardRef<
 ))
 Card.displayName = "Card"
 
+// The header section of the card. Provides consistent padding.
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -29,14 +33,15 @@ const CardHeader = React.forwardRef<
 ))
 CardHeader.displayName = "CardHeader"
 
+// The title of the card. Styled with the theme's primary serif font and dark green color.
 const CardTitle = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
-  <div
+  <h3
     ref={ref}
     className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
+      "font-serif text-2xl font-semibold leading-none tracking-tight text-[#003E29]",
       className
     )}
     {...props}
@@ -44,18 +49,20 @@ const CardTitle = React.forwardRef<
 ))
 CardTitle.displayName = "CardTitle"
 
+// The description text within the card. Uses the theme's standard text color.
 const CardDescription = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <div
+  <p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-sm text-[#4B4B4B]/80", className)}
     {...props}
   />
 ))
 CardDescription.displayName = "CardDescription"
 
+// The main content area of the card.
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -64,13 +71,14 @@ const CardContent = React.forwardRef<
 ))
 CardContent.displayName = "CardContent"
 
+// The footer section of the card. Includes a top border for clear separation.
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn("flex items-center p-6 pt-4 border-t border-gray-200/80", className)}
     {...props}
   />
 ))
