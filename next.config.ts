@@ -29,8 +29,8 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
-        hostname: 'hotel.lynkeb.com',
+        protocol: 'http',
+        hostname: 'bulksub.coderserve.com',
         port: '',
         pathname: '/**',
       },

@@ -13,10 +13,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-const imageUrlGenerator = (imageName: string) => {
-  return `https://hotel.lynkeb.com/media/${imageName}`;
-}
-
 const AIPlanner = () => {
   const { location_for_ai: location, name } = useHotelStore();
   const [interests, setInterests] = React.useState<string[]>([]);
@@ -167,7 +163,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[70vh] md:h-[90vh] w-full flex items-center justify-center text-center text-white">
         <Image
-          src={imageUrlGenerator(hero_image)}
+          src={hero_image}
           alt="Panoramic view of a misty mountain range"
           fill
           className="absolute object-cover z-0"
@@ -199,7 +195,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card>
-              <Image src={imageUrlGenerator(room_1_image)} alt="Deluxe Valley View Room" width={600} height={400} className="w-full h-64 object-cover rounded-t-lg" />
+              <Image src={room_1_image} alt="Deluxe Valley View Room" width={600} height={400} className="w-full h-64 object-cover rounded-t-lg" />
               <CardHeader><CardTitle>Deluxe Valley View</CardTitle></CardHeader>
               <CardContent>
                 <p className="text-brand-text/80 mb-4">Wake up to breathtaking views of the mist-covered valley from your private balcony.</p>
@@ -207,7 +203,7 @@ export default function Home() {
               </CardContent>
             </Card>
             <Card>
-              <Image src={imageUrlGenerator(room_2_image)} alt="Luxury Mountain Suite" width={600} height={400} className="w-full h-64 object-cover rounded-t-lg" />
+              <Image src={room_2_image} alt="Luxury Mountain Suite" width={600} height={400} className="w-full h-64 object-cover rounded-t-lg" />
               <CardHeader><CardTitle>Luxury Mountain Suite</CardTitle></CardHeader>
               <CardContent>
                 <p className="text-brand-text/80 mb-4">Indulge in spacious luxury with a separate living area and panoramic mountain vistas.</p>
@@ -215,7 +211,7 @@ export default function Home() {
               </CardContent>
             </Card>
             <Card>
-              <Image src={imageUrlGenerator(room_3_image)} alt="Cozy Garden Cottage" width={600} height={400} className="w-full h-64 object-cover rounded-t-lg" />
+              <Image src={room_3_image} alt="Cozy Garden Cottage" width={600} height={400} className="w-full h-64 object-cover rounded-t-lg" />
               <CardHeader><CardTitle>Cozy Garden Cottage</CardTitle></CardHeader>
               <CardContent>
                 <p className="text-brand-text/80 mb-4">A charming and secluded cottage nestled amidst our lush gardens for ultimate privacy.</p>
@@ -272,7 +268,7 @@ export default function Home() {
       <section id="about-snippet" className="py-16 md:py-24">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="md:w-1/2">
-            <Image src={imageUrlGenerator(bottom_image)} alt="The hotel exterior surrounded by trees" width={600} height={450} className="rounded-lg shadow-xl w-full object-cover" />
+            <Image src={bottom_image} alt="The hotel exterior surrounded by trees" width={600} height={450} className="rounded-lg shadow-xl w-full object-cover" />
           </div>
           <div className="md:w-1/2 text-center md:text-left">
             <h2 className="font-serif text-3xl md:text-5xl text-brand-green mb-4">Your Sanctuary in the Hills</h2>
