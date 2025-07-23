@@ -11,6 +11,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useHotelStore } from "@/lib/zustandStore";
 import axios from "axios";
+import { backendUrl } from '../lib/constants';
 
 // --- Font Setup for "Tranquil Luxury" Theme ---
 const fontSans = Plus_Jakarta_Sans({
@@ -62,7 +63,7 @@ export default function RootLayout({
     const fetchAndSetHotelData = async () => {
       try {
         // Fetch data from your local API endpoint.
-        const response = await axios.get("http://192.168.1.8:8000/api/v1/hotel/");
+        const response = await axios.get(backendUrl + "/hotel/");
         if (response.status != 200) {
           // Handle HTTP errors like 404 or 500.
           throw new Error(`Failed to fetch hotel data: ${response.statusText}`);
