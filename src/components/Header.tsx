@@ -22,11 +22,11 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <Mountain className="h-6 w-6" />
-          <span className="font-bold font-headline text-xl">Mountain Vista Retreat</span>
+          <Mountain className="h-6 w-6 text-primary" />
+          <span className="font-bold text-xl">Mountain Vista Retreat</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
@@ -35,7 +35,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                 "transition-colors hover:text-primary",
-                pathname === link.href ? "text-primary" : "text-foreground/70"
+                pathname === link.href ? "text-primary" : "text-muted-foreground"
               )}
             >
               {link.label}
@@ -58,7 +58,7 @@ export default function Header() {
             <SheetContent side="right">
               <div className="grid gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2">
-                  <Mountain className="h-6 w-6" />
+                  <Mountain className="h-6 w-6 text-primary" />
                   <span className="font-bold">Mountain Vista</span>
                 </Link>
                 <nav className="grid gap-4">
@@ -68,7 +68,7 @@ export default function Header() {
                       href={link.href}
                       className={cn(
                         "text-lg font-medium transition-colors hover:text-primary",
-                        pathname === link.href ? "text-primary" : "text-foreground/70"
+                        pathname === link.href ? "text-primary" : "text-muted-foreground"
                       )}
                     >
                       {link.label}

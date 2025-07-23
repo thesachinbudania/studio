@@ -4,6 +4,12 @@ import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Inter as FontSans } from "next/font/google"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
   title: "Mountain Vista Retreat",
@@ -16,16 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" suppressHydrationWarning className="dark">
       <body
         className={cn(
-          "min-h-screen bg-background font-body antialiased",
-          "font-body"
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
         )}
       >
         <div className="relative flex min-h-screen flex-col">
