@@ -29,9 +29,9 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'http',
-        hostname: '192.168.1.8',
-        port: '8000',
+        protocol: 'https',
+        hostname: 'hotel.lynkeb.com',
+        port: '',
         pathname: '/**',
       },
     ],
