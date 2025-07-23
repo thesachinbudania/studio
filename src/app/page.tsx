@@ -12,10 +12,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
-import { backendUrl } from "@/lib/constants";
 
 const imageUrlGenerator = (imageName: string) => {
-  return `${backendUrl}/media/${imageName}`;
+  return `https://hotel.lynkeb.com/media/${imageName}`;
 }
 
 const AIPlanner = () => {
